@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Map with Markers using HTML</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <gmp-map
+      center="43.4142989,-124.2301242"
+      zoom="4"
+      map-id="BB_COMMUNITY_MAP"
+      style="height: 400px"
+    >
+        {% for pin in pins %}
+            <gmp-advanced-marker 
+                position="{{ pin.latlong }}"
+                title="Count={{ pin.count }}"
+            ></gmp-advanced-marker>
+        {% endfor %}
+    </gmp-map>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=maps,marker&v=beta"
+      defer
+    ></script>
+  </body>
+</html>
