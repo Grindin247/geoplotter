@@ -3,7 +3,7 @@ from jinja2 import Environment, FileSystemLoader
 from dataclasses import dataclass
 import csv
 
-GOOGLE_MAPS_API_KEY = "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
+GOOGLE_MAPS_API_KEY = "YOUR_API_KEY_HERE"
 DATA_FILE_PATH = "data.csv"
 DATA_NAME_COLUMN = "Name"
 DATA_ZIPCODE_COLUMN = "Primary Zip"
