@@ -3,6 +3,7 @@ from jinja2 import Environment, FileSystemLoader
 from dataclasses import dataclass
 import csv
 
+GOOGLE_MAPS_API_KEY = "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
 DATA_FILE_PATH = "data.csv"
 DATA_NAME_COLUMN = "Name"
 DATA_ZIPCODE_COLUMN = "Primary Zip"
@@ -18,7 +19,7 @@ def create_html_file(pins):
     """Create HTML file from template using provided pins data."""
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('index.html.j2')
-    output = template.render(pins=pins)
+    output = template.render(pins=pins, api_key=GOOGLE_MAPS_API_KEY)
 
     with open('index.html', 'w') as file:
         file.write(output)
